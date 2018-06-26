@@ -2,20 +2,87 @@
 <html>
 <head>
 <title>飲食ピュアピュア検索</title>
+<style>
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 10px;
+  margin: 0px;
+  padding: 0px;
+}
+#site-header {
+  padding: 10px 15px;
+  background-color: blue;
+}
+#site-header h1 {
+  font-size: 1.2em;
+  line-height: 1em;
+  text-align: center;
+}
+#site-main {
+  height: calc(100vh - 32px - 50px);
+  width: calc(100% - 30px);
+  margin: 0px 15px;
+  overflow: scroll;
+  background-color: gray;
+}
+#site-footer {
+  padding: 10px 15px;
+  height: 50px;
+  background-color: yellow;
+}
+#site-footer h2,
+#site-footer ul {
+  display: inline-block;
+}
+#site-footer ul li {
+  display: inline-block;
+  list-style: none;
+}
+#site-footer ul li::before {
+  content: '・';
+}
+#site-footer .copy {
+  font-size: 1em;
+}
+
+</style>
+<script>
+var today = new Date();
+document.querySelector('.copy span.year').innerHTML = today.getFullYear();
+</script>
 </head>
 <body>
-  <h1>飲食ピュアピュア検索</h1>
-  <script>
-    (function() {
-      var cx = '005655036463564289009:wdkvy6lefcy';
-      var gcse = document.createElement('script');
-      gcse.type = 'text/javascript';
-      gcse.async = true;
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(gcse, s);
-    })();
-  </script>
-  <gcse:search></gcse:search>
+  <header id="site-header">
+    <h1>飲食ピュアピュア検索</h1>
+  </header>
+  <main id="site-main">
+    <script>
+      (function() {
+        var cx = '005655036463564289009:wdkvy6lefcy';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+  </main>
+  <footer id="site-footer">
+    <h2>検索結果から外してるページ</h2>
+    <ul class="removed-list">
+      <li>食べログ</li>
+      <li>ホットペッパー</li>
+      <li>ぐるなび</li>
+      <li>レッティ</li>
+      <li>ヒトサラ</li>
+    </ul>
+    
+    <p class="copy">
+    &copy;<span class="year"></span> <a href="https://www.reddit.com/user/alexklaus80">alexklaus80</a> All Rights Given Away.
+    </p>
+  </footer>
 </body>
 </html>
